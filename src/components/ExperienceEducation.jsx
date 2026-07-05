@@ -29,13 +29,13 @@ const education = [
   {
     title: "Class XII, CBSE",
     org: "Jagran Public School, Kannauj",
-    date: "2023",
+    date: "2022",
     description: "Scored 89% in senior secondary examinations.",
   },
   {
     title: "Class X, CBSE",
     org: "Jagran Public School, Kannauj",
-    date: "2021",
+    date: "2020",
     description: "Scored 93.4% in secondary examinations.",
   },
 ];

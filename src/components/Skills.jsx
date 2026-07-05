@@ -63,7 +63,8 @@ function Pill({ label }) {
     <motion.span
       variants={pillItem}
       whileHover={{ y: -3 }}
-      className="border border-border text-textSecondary text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:border-violet/50 hover:text-textPrimary hover:shadow-[0_8px_20px_-8px_rgba(139,92,246,0.4)] transition-all duration-200"
+      style={{ color: "#ffffff" }}
+      className="border border-border text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:border-violet/50 hover:shadow-[0_8px_20px_-8px_rgba(139,92,246,0.4)] transition-all duration-200"
     >
       {label}
     </motion.span>
@@ -99,11 +100,13 @@ export default function Skills() {
           variants={fadeUp}
           className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-3 sm:mb-4"
         >
-          Skills &amp; <span className="gradient-text">tools</span>
+          <span style={{ color: "#ffffff" }}>Skills &amp; </span>
+          <span className="gradient-text">tools</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
-          className="text-textSecondary text-sm sm:text-base text-center max-w-xl mx-auto mb-10 sm:mb-16"
+          style={{ color: "#ffffff" }}
+          className="text-sm sm:text-base text-center max-w-xl mx-auto mb-10 sm:mb-16 opacity-70"
         >
           The stack I reach for when turning an idea into a shipped product.
         </motion.p>
@@ -116,7 +119,10 @@ export default function Skills() {
                   0{i + 1}
                 </span>
                 <span className="h-px flex-1 max-w-[24px] bg-violet/40" />
-                <h3 className="text-textPrimary font-semibold text-sm sm:text-base tracking-wide">
+                <h3
+                  style={{ color: "#ffffff" }}
+                  className="font-semibold text-sm sm:text-base tracking-wide"
+                >
                   {group.label}
                 </h3>
                 <span className="h-px flex-1 bg-border" />
