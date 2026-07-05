@@ -1,10 +1,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { FiCopy, FiCheck, FiLinkedin, FiGithub, FiPhone, FiSend } from "react-icons/fi";
 import { SiLeetcode } from "react-icons/si";
 
 const EMAIL = "shuklapratham28@gmail.com";
 const PHONE = "+91-8187930650";
+
+// --- EmailJS config ---
+// 1. Create a free account at https://www.emailjs.com/
+// 2. Add an Email Service (e.g. Gmail) -> copy the Service ID
+// 3. Create an Email Template with variables: {{name}}, {{email}}, {{message}} -> copy the Template ID
+// 4. Account -> General -> copy the Public Key
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 // same fade variants as About.jsx / Hero.jsx / Projects.jsx / Skills.jsx / Achievements.jsx
 const fadeUp = {
@@ -43,16 +53,21 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Request failed");
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 4000);
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error:", err);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 4000);
     }
