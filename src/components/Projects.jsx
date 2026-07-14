@@ -25,6 +25,17 @@ const container = {
 const projects = [
   {
     number: "01",
+    tag: "Web · GenAI",
+    title: "Synq",
+    description:
+      "A real-time collaborative code editor with a Monaco-based multi-file workspace, live cursors, and presence indicators powered by Socket.io. Backed by a modular service-layer API with JWT auth, role-based access control, and version snapshotting, plus a GenAI assistant panel for code explanation, refactoring, and bug detection.",
+    stack: "React, Node.js, Express.js, MongoDB, Socket.io, Monaco Editor, Generative AI, AWS EC2",
+    image: "/projects/synq.png",
+    gradient: "from-[#241a44] to-[#0d0d14]",
+    link: "https://synq.prathamshukla.shop/",
+  },
+  {
+    number: "02",
     tag: "Web",
     title: "DevBridge",
     description:
@@ -35,7 +46,7 @@ const projects = [
     link: "https://devbridges.shop/",
   },
   {
-    number: "02",
+    number: "03",
     tag: "Web · Blockchain",
     title: "AABHAAR Jharkhand",
     description:
@@ -46,7 +57,7 @@ const projects = [
     link: "https://aabhaar-c3xq.vercel.app/",
   },
   {
-    number: "03",
+    number: "04",
     tag: "AI · Chat",
     title: "Intellix",
     description:
@@ -57,7 +68,7 @@ const projects = [
     link: "https://intellixchats.netlify.app/",
   },
   {
-    number: "04",
+    number: "05",
     tag: "Web",
     title: "ScreenPass",
     description:
@@ -68,7 +79,7 @@ const projects = [
     link: "https://screen-pass.vercel.app/",
   },
   {
-    number: "05",
+    number: "06",
     tag: "Web · SIH",
     title: "MDR Tracker",
     description:
@@ -79,7 +90,7 @@ const projects = [
     link: "https://ps2-gseo.vercel.app/tracking",
   },
   {
-    number: "06",
+    number: "07",
     tag: "AI · Docs",
     title: "ClauseLogic",
     description:
@@ -90,7 +101,7 @@ const projects = [
     link: "https://docu-scan-ai-ip1a.vercel.app/",
   },
   {
-    number: "07",
+    number: "08",
     tag: "Frontend",
     title: "JTGeats",
     description:
